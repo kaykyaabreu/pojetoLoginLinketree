@@ -1,10 +1,11 @@
 
 import {useState} from "react";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/header";
 import { Input } from "../../components/input";
-import { FormEvent, useEffect } from "react";
+import { useEffect } from "react";
 import {db} from "../../services/firebaseConection";
 import { collection, addDoc, setDoc, getDoc, doc } from "firebase/firestore";
+import type { FormEvent } from "react";
 
 export function Networks() {
     const [facebook, setFacebook] = useState("123");

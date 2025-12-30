@@ -1,7 +1,8 @@
 import {Header} from '../../components/header';
 import { Input } from '../../components/input';
 import {FiTrash} from "react-icons/fi"
-import { FormEvent, useEffect } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect } from 'react';
 import {useState} from 'react';
 import {addDoc, collection, onSnapshot, query, orderBy, doc, deleteDoc} from "firebase/firestore"
 import {db} from "../../services/firebaseConection"
