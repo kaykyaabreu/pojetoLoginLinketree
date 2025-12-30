@@ -4,7 +4,7 @@ import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 import { useEffect } from "react";
 import {db} from "../../services/firebaseConection";
-import { collection, addDoc, setDoc, getDoc, doc } from "firebase/firestore";
+import { setDoc, getDoc, doc } from "firebase/firestore";
 import type { FormEvent } from "react";
 
 export function Networks() {

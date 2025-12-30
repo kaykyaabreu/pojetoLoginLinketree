@@ -1,14 +1,15 @@
 import { auth } from "../services/firebaseConection";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-import type { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 
     interface PrivateProps {
     children: React.ReactNode;
     }
 
-export function Private({ children }: PrivateProps):any {
+import type { ReactElement } from "react";
+import React from "react";
+export function Private({ children }: PrivateProps): ReactElement | null {
     const [loading, setLoading] = useState(true);
     const [signed, setSigned] = useState(false);
 
@@ -36,5 +37,7 @@ export function Private({ children }: PrivateProps):any {
         return <div>Loading...</div>;
     }
 
-    return signed ? children : <Navigate to="/login" />;
+    if (!signed) return <Navigate to="/login" />;
+    if (React.isValidElement(children)) return children;
+    return null;
 }
